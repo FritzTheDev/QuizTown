@@ -29,7 +29,7 @@ const UserSchema = new Schema({
     quizScores: [QuizScoreSchema],
     upgrades: [UpgradeSchema],
     quizBucks: {
-        type: String,
+        type: Number,
         default: 0,
         required: true,
     }

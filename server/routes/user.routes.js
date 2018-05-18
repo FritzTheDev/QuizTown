@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const User = require('../models/user.model');
 const config = require('../config/database')
 
 // Register
@@ -17,9 +17,9 @@ router.post('/register', (req, res, next) => {
         if (err) {
             res.json({ success: false, msg: 'Failed to register user' });
         } else {
-            res.json({ success: true, msg: 'User registered' })
+            res.json({ success: true, msg: 'User registered' });
         }
-    })
+    });
 });
 // Add Score
 router.post('/addscore', passport.authenticate(jwt, {session: false}), (req, res, next) => {
